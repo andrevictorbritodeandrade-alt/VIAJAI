@@ -230,7 +230,11 @@ const TOPIC_IMAGES: Record<string, string> = {
   'seguranca': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=500&auto=format&fit=crop',
 };
 
-const MelhoresDestinos: React.FC = () => {
+import CategoryHeader from './CategoryHeader';
+
+// ... (Rest of the structure will be added)
+
+const MelhoresDestinos: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const [activeCity, setActiveCity] = useState<City>('CPT');
   const [selectedTopic, setSelectedTopic] = useState<SubTopic | null>(null);
 
@@ -291,7 +295,9 @@ const MelhoresDestinos: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="pb-48">
+      <CategoryHeader title="Guia Melhores Destinos" onBack={onBack} />
+      <div className="p-4 space-y-6">
       <div className="flex bg-slate-900 p-1.5 rounded-[24px] shadow-xl">
         <button 
           onClick={() => setActiveCity('CPT')}
@@ -362,6 +368,7 @@ const MelhoresDestinos: React.FC = () => {
           <span className="text-[10px] font-black text-sa-blue uppercase tracking-[0.2em]">Acessar Portal Completo</span>
           <span className="text-[9px] text-slate-500 font-bold mt-1 uppercase">Informações atualizadas via web</span>
         </a>
+      </div>
       </div>
     </div>
   );

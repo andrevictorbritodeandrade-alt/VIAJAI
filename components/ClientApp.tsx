@@ -210,7 +210,7 @@ const ClientApp: React.FC = () => {
       case 'cambio':
         return <CurrencyConverter onBack={goBack} />;
       case 'melhores_destinos':
-        return <MelhoresDestinos />;
+        return <MelhoresDestinos onBack={goBack} />;
       case 'voos':
         return <FlightList />;
       case 'checklist':

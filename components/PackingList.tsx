@@ -277,9 +277,9 @@ const PackingList: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   const personData = data[activePerson];
 
   return (
-    <div className="animate-in fade-in duration-500">
+    <div className="pb-48">
       <CategoryHeader title="Checklist" onBack={onBack} />
-      <div className="p-4">
+      <div className="p-4 space-y-6">
       <div className="bg-sa-green/10 border border-sa-green/20 rounded-2xl p-4 mb-6 flex gap-3 items-start shadow-sm">
         <PlaneTakeoff className="w-5 h-5 text-sa-green shrink-0 mt-0.5" />
         <div>
